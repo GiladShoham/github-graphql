@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@bit/giladshoham.test4.apollo.create-client": "^1.0.1",
-    "@bit/giladshoham.test4.react.repo-info-issues": "^1.0.0",
+    "@bit/giladshoham.github-graphql.apollo.create-client": "^1.0.0",
+    "@bit/giladshoham.github-graphql.react.repo-info-issues": "^1.0.0",
     "apollo-client-preset": "^1.0.8",
     "apollo-link": "^1.0.7",
     "graphql": "^0.12.3",
