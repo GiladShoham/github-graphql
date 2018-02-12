@@ -5,8 +5,8 @@ import {
 } from 'react-apollo';
 import './App.css';
 
-import createClient from '@bit/giladshoham.test4.apollo.create-client';
-import RepoInfoWithData from '@bit/giladshoham.test4.react.repo-info-issues';
+import createClient from '@bit/giladshoham.github-graphql.apollo.create-client';
+import RepoInfoWithData from '@bit/giladshoham.github-graphql.react.repo-info-issues';
 
 const token = 'YOUR TOEKN HERE';
 const client = createClient(token);
