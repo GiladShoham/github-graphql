@@ -31,6 +31,13 @@ Naturally,  we really don't want to go to the original project just to change th
 
 let's assume, we want to add the repo's labels list to our app. First, let’s use `bit import` the bring the component’s source code into this project. Don’t forget to [install Bit](https://docs.bitsrc.io/)!
 
+Let’s [initialize Bit](https://docs.bitsrc.io/docs/initializing-bit.html) for the project.
+
+```bash
+$ cd github-graphql 
+$ bit init
+```
+
 ```bash
 # bring the component source code into your project
 bit import giladshoham.github-graphql/queries/repo-info-issues
