@@ -51,7 +51,7 @@ under the issues ul add this:
 ```html
 <ul style={{'listStyleType': 'none'}}>
   { repository.labels.edges.map( label => (
-    <li style={{'textAlign': 'left', 'color':`#label.node.color`}} key={label.node.name}>{label.node.name}
+    <li style={{'textAlign': 'left', 'color': `#${label.node.color}`}} key={label.node.name}>{label.node.name}
     </li>) ) }
 </ul>
 ```
