@@ -29,15 +29,15 @@ We installed the components using NPM from bit's registry and everything worked 
 
 Naturally,  we really don't want to go to the original project just to change the code. Instead, let’s change it right from this project.
 
-let's assume, we want to add the repo's labels list to our app. First, let’s use `bit import` the bring the component’s source code into this project. Don’t forget to [install Bit](https://docs.bitsrc.io/)!
+let's assume, we want to add the repo's labels list to our app 
 
-Let’s [initialize Bit](https://docs.bitsrc.io/docs/initializing-bit.html) for the project.
+First, let’s [initialize Bit](https://docs.bitsrc.io/docs/initializing-bit.html) for the project. (Don’t forget to [install Bit](https://docs.bitsrc.io/)!)
 
 ```bash
 $ cd github-graphql 
 $ bit init
 ```
-
+Now, let’s use `bit import` the bring the component’s source code into this project
 ```bash
 # bring the component source code into your project
 bit import giladshoham.github-graphql/queries/repo-info-issues
