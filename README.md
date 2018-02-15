@@ -20,21 +20,42 @@ npm start
 We installed the components from bit's registry and everything worked great, but now we have a bug or maybe we just want to change one of the components.
 Of course we don't want to go to the original project but just change it from here.
 Let's see how it works.
+let's assume, we want to add the repo's labels list to our app.
+```bash
+# bring the component source code into your project
+bit import giladshoham.github-graphql/queries/repo-info-issues
+```
+you can now see the source code under components/queries/repo-info-issues
+open the `index.js` file and let's add the following code right below nameWithOwner:
+```
+labels (last:10) {
+  edges {
+    node {
+      name,
+      color
+    }
+  }
+}
+```
+This will change our query and add a list of 10 labels.
+Of course we need to change also our react component to present this list.
+Let's import the react component as well.
 ```bash
 # bring the component source code into your project
 bit import giladshoham.github-graphql/react/repo-info-issues
 ```
 you can now see the source code under components/react/repo-info-issues
-now let's make some change, for example - let's add the text "stars count" before the stars counter:
-replace the line:
+now let's add the labels list to our react component.
+under the issues ul add this:
+
 ```html
-<span style={{marginRight: '10px'}}> {repository.stargazers.totalCount} </span>
+<ul style={{'listStyleType': 'none'}}>
+  { repository.labels.edges.map( label => (
+    <li style={{'textAlign': 'left', 'color':`#label.node.color`}} key={label.node.name}>{label.node.name}
+    </li>) ) }
+</ul>
 ```
-with 
-```html
-<span style={{marginRight: '10px'}}> stars count: {repository.stargazers.totalCount} </span>
-```
-now let's compilie the new code:
+now let's compile the new code:
 ```bash
 bit build
 ```
@@ -45,9 +66,14 @@ npm start
 ```
 As you can see you have the new component rendered correctly.
 
-The last step is to export it back to bitsrc.io, so you can use the updated version from any other project.
+The last step is to tag and export the modified components back to bitsrc.io, so you can use the updated version from any other project.
 all you have to do is:
 ```bash
+# see our status
+bit status
+# tag a new version of the modified components
+bit tag -am "added labels list"
+# export back to bitsrc.io
 bit export [USERNAME.SCOPENAME]
 ```
 
